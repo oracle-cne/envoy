@@ -1,0 +1,27 @@
+{{{ $version := printf "%s.%s.%s" .major .minor .patch }}}
+@Library('olcne-pipeline') _
+import com.oracle.olcne.pipeline.BranchPattern
+
+def postBuildOL8 = {
+  build(job: 'apps/olcne/istio/proxy/' + URLEncoder.encode(env.BRANCH_NAME),
+    parameters: [
+      string(name: "BRANCH_NAME", value: env.BRANCH_NAME),
+      string(name: "PLATFORM_FILTER", value: 'ol8'),
+      booleanParam(name: "IS_MUXER_BUILD", value: true)
+    ],
+  )
+}
+
+olcnePipeline(
+  branchPattern: new BranchPattern(master: 'oracle/release/{{{.major}}}.{{{.minor}}}.{{{.patch}}}', feature: 'feature/.*'),
+  platforms: ['ol8'],
+{{{- if semverCompare ">=1.18.0" $version }}}
+  architectures: ['x86_64', 'aarch64'],
+{{{- end }}}
+  yumOL8Repos: ['ol8_appstream', 'ol8_codeready_builder'],
+  customPlatformStages: [
+    customPlatformSteps: [
+      ol8: [container: [enabled: false], postBuild: [enabled: false, method: postBuildOL8]],
+    ],
+  ],
+)
