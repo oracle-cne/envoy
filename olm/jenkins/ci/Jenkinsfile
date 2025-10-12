@@ -13,11 +13,9 @@ def postBuildOL8 = {
 }
 
 olcnePipeline(
-  branchPattern: new BranchPattern(master: 'oracle/release/{{{.major}}}.{{{.minor}}}.{{{.patch}}}', feature: 'feature/.*'),
+  branchPattern: new BranchPattern(master: 'oracle/release/{{{.major}}}.{{{.minor}}}.{{{.patch}}}', feature: '(?!^release/.*$)(^.*$)'),
   platforms: ['ol8'],
-{{{- if semverCompare ">=1.18.0" $version }}}
   architectures: ['x86_64', 'aarch64'],
-{{{- end }}}
   yumOL8Repos: ['ol8_appstream', 'ol8_codeready_builder'],
   customPlatformStages: [
     customPlatformSteps: [

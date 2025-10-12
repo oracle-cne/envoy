@@ -19,9 +19,6 @@ Summary:	Envoy is an L7 proxy and communication bus designed for large modern se
 License:	Apache License 2.0
 Vendor:		Oracle America
 URL:		https://github.com/istio/envoy
-{{{- if semverCompare "<1.18.0" $version }}}
-ExclusiveArch:  x86_64
-{{{- end }}}
 Source0:        %{name}-%{version}.tar.bz2
 
 %description
