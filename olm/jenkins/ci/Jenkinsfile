@@ -1,0 +1,25 @@
+
+@Library('olcne-pipeline') _
+import com.oracle.olcne.pipeline.BranchPattern
+
+def postBuildOL8 = {
+  build(job: 'apps/olcne/istio/proxy/' + URLEncoder.encode(env.BRANCH_NAME),
+    parameters: [
+      string(name: "BRANCH_NAME", value: env.BRANCH_NAME),
+      string(name: "PLATFORM_FILTER", value: 'ol8'),
+      booleanParam(name: "IS_MUXER_BUILD", value: true)
+    ],
+  )
+}
+
+olcnePipeline(
+  branchPattern: new BranchPattern(master: 'oracle/release/1.26.5', feature: '(?!^release/.*$)(^.*$)'),
+  platforms: ['ol8'],
+  architectures: ['x86_64', 'aarch64'],
+  yumOL8Repos: ['ol8_appstream', 'ol8_codeready_builder'],
+  customPlatformStages: [
+    customPlatformSteps: [
+      ol8: [container: [enabled: false], postBuild: [enabled: false, method: postBuildOL8]],
+    ],
+  ],
+)
