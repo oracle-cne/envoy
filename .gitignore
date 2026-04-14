@@ -110,6 +110,10 @@ yarn-error.log*
 #############################
 /contrib/golang/**/test_data/go.sum
 /contrib/golang/**/test_data/*/go.sum
+!/contrib/golang/filters/http/test/test_data/dummy/go.sum
+!/contrib/golang/filters/network/test/test_data/go.sum
+!/contrib/golang/router/cluster_specifier/test/test_data/simple/go.sum
+!/contrib/golang/upstreams/http/tcp/test/test_data/go.sum
 /devcontainer/devcontainer.env
 /docs/landing_source/.bundle
 /linux
