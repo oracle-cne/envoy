@@ -533,7 +533,7 @@ prettyplease@0.2.22
 SPDX:Apache-2.0
 
 == Copyright
-(no copyright notices found)
+Copyright to David Tolnay <dtolnay@gmail.com>
 
 --------------------------------- (separator) ----------------------------------
 
@@ -544,7 +544,7 @@ proc-macro2@1.0.86
 SPDX:Apache-2.0
 
 == Copyright
-(no copyright notices found)
+Copyright to David Tolnay <dtolnay@gmail.com>,Alex Crichton <alex@alexcrichton.com>
 
 --------------------------------- (separator) ----------------------------------
 
@@ -555,7 +555,7 @@ quote@1.0.37
 SPDX:Apache-2.0
 
 == Copyright
-(no copyright notices found)
+David Tolnay <dtolnay@gmail.com>
 
 --------------------------------- (separator) ----------------------------------
 
@@ -623,7 +623,7 @@ syn@2.0.77
 SPDX:Apache-2.0
 
 == Copyright
-(no copyright notices found)
+David Tolnay <dtolnay@gmail.com>
 
 --------------------------------- (separator) ----------------------------------
 
@@ -1047,5 +1047,3 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 For more information, please refer to <http://unlicense.org/>
 
 
-=== ATTRIBUTION-HELPER-GENERATED:
-=== Attribution helper version: {Major:0 Minor:11 GitVersion:5b3c8469 GitCommit:5b3c846925039d1b833778f919394d15892d235d GitTreeState:clean BuildDate:2025-11-17T21:03:16Z GoVersion:go1.24.9 Compiler:gc Platform:linux/amd64}
