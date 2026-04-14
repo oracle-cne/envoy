@@ -1,3 +1,5 @@
+//go:build ignore
+
 // NOLINT(namespace-envoy)
 #include <cstdlib>
 #include <iostream>
