@@ -20,7 +20,7 @@ api_cc_test(
 api_go_test(
     name = "go_build_test",
     size = "small",
-    srcs = ["go_build_test.go"],
+    srcs = ["go/go_build_test.go"],
     importpath = "go_build_test",
     deps = [
         "//envoy/api/v2:pkg_go_proto",
