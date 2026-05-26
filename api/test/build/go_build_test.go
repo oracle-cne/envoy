@@ -1,5 +1,7 @@
 package go_build_test
 
+import "C"
+
 import (
 	"testing"
 
