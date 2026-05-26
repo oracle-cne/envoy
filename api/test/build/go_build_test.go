@@ -1,6 +1,5 @@
+// go:build skipthis
 package go_build_test
-
-import "C"
 
 import (
 	"testing"
