@@ -4,6 +4,6 @@ go 1.22
 
 require github.com/envoyproxy/envoy v1.24.0
 
-require google.golang.org/protobuf v1.36.1 // indirect
+require google.golang.org/protobuf v1.36.6 // indirect
 
 replace github.com/envoyproxy/envoy => ../../../../../../../
