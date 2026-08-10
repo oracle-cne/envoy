@@ -21,6 +21,7 @@ api_go_test(
     name = "go_build_test",
     size = "small",
     srcs = ["go_build_test.go"],
+    gotags = ["bazel"],
     importpath = "go_build_test",
     deps = [
         "//envoy/api/v2:pkg_go_proto",
